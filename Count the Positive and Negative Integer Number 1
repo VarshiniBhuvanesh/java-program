@@ -1,0 +1,23 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int pcount=0,ncount=0;
+        for (int i = 0; i < n; i++) {
+            int num = sc.nextInt();
+            if (num > 0) {
+                pcount++;
+            } else if (num < 0) {
+                ncount++;
+            }
+        }
+        System.out.printf("Count of Positive Integer is %.2f\n", (float) pcount);
+        System.out.printf("Count of Negative Integer is %.2f\n", (float) ncount);
+    }
+}
