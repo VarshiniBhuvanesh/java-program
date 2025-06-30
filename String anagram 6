@@ -10,9 +10,6 @@ public class Solution {
         Scanner scanner = new Scanner(System.in);
         String str1 = scanner.nextLine();
         String str2 = scanner.nextLine();
-        scanner.close();
-        str1 = str1.replaceAll("\\s+", "").toLowerCase();
-        str2 = str2.replaceAll("\\s+", "").toLowerCase();
         if (str1.length() != str2.length()) {
             System.out.println("The given strings are not an anagram");
             return;
