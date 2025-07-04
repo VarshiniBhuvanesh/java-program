@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int length = sc.nextInt();
+        int[] arr = new int[length];
+
+        for (int i = 0; i < length; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        int firstMaxEven = Integer.MIN_VALUE;
+        int secondMaxEven = Integer.MIN_VALUE;
+
+        int firstMinOdd = Integer.MAX_VALUE;
+        int secondMinOdd = Integer.MAX_VALUE;
+
+        for (int i = 0; i < length; i++) {
+            if (i % 2 == 0) { // even index
+                if (arr[i] > firstMaxEven) {
+                    secondMaxEven = firstMaxEven;
+                    firstMaxEven = arr[i];
+                  
+                } else if (arr[i] > secondMaxEven) {
+                    secondMaxEven = arr[i];
+                }
+              
+            } else { // odd index
+                if (arr[i] < firstMinOdd) {
+                    secondMinOdd = firstMinOdd;
+                    firstMinOdd = arr[i];
+                } else if (arr[i] < secondMinOdd) {
+                    secondMinOdd = arr[i];
+                }
+            }
+        }
+
+        int sum = secondMaxEven + secondMinOdd;
+        System.out.println("Sum=" + sum);
+    }
+}
